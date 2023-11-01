@@ -2,7 +2,7 @@ import React from 'react'
 import Tasks from './Tasks.jsx';
 import Button from './Button.jsx';
 
-export default function SelectedProject({project,onDelete}) {
+export default function SelectedProject({project,onDelete,onAddTask,onDeleteTask,tasks}) {
     const formattedDate =new Date(project.dueDate).toLocaleDateString('en-US',{
         year:'numeric',
         month:'short',
@@ -22,7 +22,7 @@ export default function SelectedProject({project,onDelete}) {
                 <p className='text-stone-600 whitespace-pre-wrap'>{project.description}</p>
             </div>
         </header>
-        <Tasks/>
+        <Tasks onAdd={onAddTask}  onDelete={onDeleteTask} tasks={tasks} />
     </div>
   )
 }
