@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from './Button'
 
 export default function NewTask({onAdd}) {
-    const [enteredTask,setEnteredTask]=useState();
+    const [enteredTask,setEnteredTask]=useState('');
 
     const handleChange=(e)=>{
         setEnteredTask(e.target.value);
